@@ -1,0 +1,131 @@
+/* Prairie View Dental — demo page styles. The widget itself is styled
+ * entirely by chat-widget.css so it stays portable. */
+
+:root {
+  --teal: #0e6b5c;
+  --teal-dark: #0a4f44;
+  --teal-soft: #e7f2ef;
+  --ink: #1c2422;
+  --soft: #5c6b67;
+  --line: #e3e8e6;
+  --bg: #fbfcfc;
+  --white: #ffffff;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+code {
+  background: var(--teal-soft);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+.brand { font-weight: 800; font-size: 1.25rem; color: var(--teal-dark); text-decoration: none; }
+.main-nav { display: flex; gap: 1.4rem; margin-left: auto; }
+.main-nav a { color: var(--soft); text-decoration: none; font-weight: 600; }
+.main-nav a:hover { color: var(--teal); }
+
+.btn {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+.btn:hover { background: var(--teal-dark); }
+.btn-small { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+.btn-ghost { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+.btn-ghost:hover { background: var(--teal-soft); }
+
+.hero { background: linear-gradient(135deg, var(--teal-dark), var(--teal)); color: #fff; }
+.hero-inner { padding: 5rem 24px; max-width: 720px; }
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.8;
+  margin: 0 0 0.8rem;
+}
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0 0 1rem; }
+.lede { font-size: 1.15rem; opacity: 0.92; max-width: 34rem; }
+.hero-cta { display: flex; gap: 1rem; margin-top: 1.8rem; flex-wrap: wrap; }
+.hero-cta .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+.hero-cta .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+.services { padding: 4.5rem 0; }
+.services h2, .widget-demo h2, .visit h2 { font-size: 1.9rem; margin-bottom: 1.5rem; }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.service-card h3 { margin: 0 0 0.4rem; color: var(--teal-dark); }
+.service-card p { margin: 0; color: var(--soft); }
+
+.widget-demo { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 4.5rem 0; }
+.demo-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+.demo-points { padding-left: 1.2rem; color: var(--soft); }
+.demo-points li { margin-bottom: 0.4rem; }
+.demo-card {
+  background: var(--teal-soft);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+}
+.demo-card h3 { margin-top: 0; }
+.demo-card ul { padding-left: 1.2rem; color: var(--soft); margin-bottom: 1.4rem; }
+.demo-card li { margin-bottom: 0.35rem; font-style: italic; }
+
+.visit { padding: 4.5rem 0; }
+.visit-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.visit address { font-style: normal; font-size: 1.05rem; }
+.visit address a { color: var(--teal); font-weight: 600; }
+.hours { border-collapse: collapse; width: 100%; max-width: 380px; }
+.hours td { padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 600; }
+
+.site-footer { background: var(--ink); color: rgba(255, 255, 255, 0.65); }
+.footer-inner { padding-top: 1.6rem; padding-bottom: 1.6rem; font-size: 0.88rem; }
+.footer-inner p { margin: 0; }
+
+@media (max-width: 760px) {
+  .main-nav { display: none; }
+  .demo-inner, .visit-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-inner { padding: 3.5rem 24px; }
+}
