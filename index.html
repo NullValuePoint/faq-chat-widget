@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prairie View Dental — Lincoln, NE | FAQ Chat Widget Demo</title>
+  <meta name="description" content="Demo of an embeddable AI-style FAQ chat widget for Prairie View Dental, Lincoln NE.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chat-widget.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">Prairie View Dental</a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#visit">Visit us</a>
+        <a href="#widget-demo">Chat widget</a>
+      </nav>
+      <a class="btn btn-small" href="tel:+14025550188">(402) 555-0188</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="kicker">Lincoln, Nebraska</p>
+        <h1>Gentle dentistry,<br>instant answers.</h1>
+        <p class="lede">Tap the chat bubble in the corner and ask about hours, pricing, insurance, or booking. Our website assistant answers on the spot, day or night.</p>
+        <div class="hero-cta">
+          <button class="btn" id="openChatBtn" type="button">Try the chat widget</button>
+          <a class="btn btn-ghost" href="#services">Browse services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <h2>Services</h2>
+        <div class="service-grid">
+          <div class="service-card"><h3>Cleanings &amp; Exams</h3><p>Twice-yearly hygiene visits that keep small problems small.</p></div>
+          <div class="service-card"><h3>Fillings &amp; Crowns</h3><p>Tooth-colored restorations matched to your natural shade.</p></div>
+          <div class="service-card"><h3>Whitening</h3><p>In-office treatment or take-home kits for a brighter smile.</p></div>
+          <div class="service-card"><h3>Invisalign</h3><p>Discreet clear aligners with a free smile assessment.</p></div>
+          <div class="service-card"><h3>Implants</h3><p>3D-guided implants that look and feel like your own teeth.</p></div>
+          <div class="service-card"><h3>Emergency Care</h3><p>Same-day slots for toothaches, chips, and breaks.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-demo" id="widget-demo">
+      <div class="wrap demo-inner">
+        <div>
+          <h2>Meet the widget</h2>
+          <p>This floating assistant is a single <code>chat-widget.js</code> + <code>chat-widget.css</code> pair any site can embed. It matches questions against a built-in knowledge base with weighted keyword and phrase scoring, handles greetings and small talk, asks for clarification when two topics are close, and remembers context for follow-ups like “what about Saturday?”.</p>
+          <ul class="demo-points">
+            <li>No frameworks, no network calls, works offline</li>
+            <li>Configurable name, colors, and knowledge base</li>
+            <li>Typing indicator, quick-reply chips, answer feedback</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <h3>Try asking…</h3>
+          <ul>
+            <li>“What are your hours?”</li>
+            <li>“Do you take Delta Dental?”</li>
+            <li>“How much is whitening?”</li>
+            <li>“My tooth hurts, what do I do?”</li>
+          </ul>
+          <button class="btn" id="openChatBtn2" type="button">Open the chat</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap visit-inner">
+        <div>
+          <h2>Visit us</h2>
+          <address>
+            2901 Pine Lake Rd, Suite 120<br>
+            Lincoln, NE 68516<br>
+            <a href="tel:+14025550188">(402) 555-0188</a><br>
+            <a href="mailto:hello@prairieviewdental.example">hello@prairieviewdental.example</a>
+          </address>
+        </div>
+        <div>
+          <h2>Hours</h2>
+          <table class="hours">
+            <tr><td>Monday – Thursday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr><td>Friday</td><td>8:00 AM – 2:00 PM</td></tr>
+            <tr><td>Saturday – Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>Prairie View Dental</strong> is a fictional demo business built to showcase the FAQ chat widget. Nothing here is real.</p>
+    </div>
+  </footer>
+
+  <script src="chat-widget.js"></script>
+  <script src="kb.js"></script>
+  <script>
+    var widget = ChatWidget.init(window.PVD_CONFIG);
+    document.getElementById("openChatBtn").addEventListener("click", function () { widget.toggle(true); });
+    document.getElementById("openChatBtn2").addEventListener("click", function () { widget.toggle(true); });
+  </script>
+</body>
+</html>
